@@ -6,16 +6,6 @@
 html{
     font-size: 62.5%;
 }
-#cabecalho{
-    width: 100%;
-    max-width: 2048px;
-    height: 10rem;
-    background-color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
 .logo{
     height: 8rem;
     width: 8rem;
@@ -24,11 +14,14 @@ html{
     margin-left: 2rem;
 }
 .nav-menu{
-    /* width: 100%; */
+    width: 100%;
+    max-width: 2048px;
+    height: 10rem;
+    background-color: #23232e;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .menu{
     display: flex;
@@ -36,9 +29,90 @@ html{
     flex-wrap: wrap;
     list-style: none;
 }
+.menu li{
+    margin-left: 10rem;
+}
 .menu li a{
     color: white;
     font-size: 2rem;
     text-decoration: none;
     margin: 2rem;
+    transition: 0.3s;
+}
+.menu li a:hover{
+    opacity: 0.7;
+}
+.mobile-menu{
+    cursor: pointer;
+    display: none;
+}
+.mobile-menu div{
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px
+}
+@media (max-width: 1208px) {
+    .menu li{
+        margin-left: 7rem;
+    }
+}
+@media (max-width: 1058px) {
+    .menu li{
+        margin-left: 5rem;
+    }
+}
+@media (max-width: 958px) {
+    .menu li{
+        margin-left: 3rem;
+    }
+}
+@media (max-width: 858px) {
+    .menu li{
+        margin-left: 1rem;
+    }
+}
+@media (max-width: 758px) {
+    body{
+        overflow-x: hidden;
+    }
+    .menu{
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 30vw;
+        height: 92vh;
+        background: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+
+    }
+    .logo{
+        margin-right:80vw;
+    }
+    .menu li{
+        margin-left: 0;
+        opacity: 0;
+    }
+    .mobile-menu{
+        display: block;
+    }
+    .menu.active{
+        transform: translateX(0);
+    }
+}
+@media (max-width: 375px) {
+    .menu{
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 70vw;
+        height: 92vh;
+        background: #23232e;
+    }
+    .logo{
+        margin-right:50vw;
+    }
 }
